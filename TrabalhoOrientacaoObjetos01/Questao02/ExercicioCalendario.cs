@@ -8,6 +8,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 {
     public class ExercicioCalendario
     {
-
+        public void Executar()
+        {
+            Console.WriteLine("Quetão 02");
+        }
     }
 }
