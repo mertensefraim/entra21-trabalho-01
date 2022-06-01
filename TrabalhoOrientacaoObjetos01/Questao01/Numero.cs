@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabalhoOrientacaoObjetos01.Questao01
 {
-    class _
+    internal class Numero
     {
     }
 }
