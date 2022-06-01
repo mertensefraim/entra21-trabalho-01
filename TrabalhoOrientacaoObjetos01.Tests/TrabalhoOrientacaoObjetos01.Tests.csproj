@@ -21,4 +21,8 @@
     <Folder Include="Questao01\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrabalhoOrientacaoObjetos01\TrabalhoOrientacaoObjetos01.csproj" />
+  </ItemGroup>
+
 </Project>
