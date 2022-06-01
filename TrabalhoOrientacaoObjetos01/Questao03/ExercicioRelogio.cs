@@ -8,5 +8,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao03
 {
     public class ExercicioRelogio
     {
+        public void Executar()
+        {
+
+        }
     }
 }
