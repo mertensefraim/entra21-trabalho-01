@@ -15,59 +15,37 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             var mes = Data.ToString("MM");
 
             if (mes == "01")
-            {
                 return "janeiro";
-            }
             
             else if (mes == "02")
-            {
                 return "fevereiro";
-            }
-            
+           
             else if (mes == "03")
-            {
                 return "março";
-            }
             
             else if (mes == "04")
-            {
                 return "abril";
-            }
             
             else if (mes == "05")
-            {
                 return "maio";
-            }
             
             else if (mes == "06")
-            {
                 return "junho";
-            }
             
             else if (mes == "07")
-            {
                 return "julho";
-            }
             
             else if (mes == "08")
-            {
                 return "agosto";
-            }
 
             else if (mes == "09")
-            {
                 return "setembro";
-            }
             
             else if (mes == "10")
-            {
                 return "outubro";
-            }
              
             else if (mes == "11")
-            {
                 return "novembro";
-            }
 
             return "dezembro";       
         }
@@ -75,11 +53,16 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
         public string ObterDiaPorExtenso()
         {
             var dia = Data.ToString("dd");
+
             var primeiroDigito = dia.Substring(0, 1);
             var primeiroDigitoExtenso = "";
+
             var segundoDigito = dia.Substring(1, 1);
             var segundoDigitoExtenso = "";
+
             var diaExtenso = "";
+
+            // verifica primeiro digito (dezena)
 
             if (primeiroDigito == "2")
                 primeiroDigitoExtenso = "vinte";
@@ -87,6 +70,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (primeiroDigito == "3")
                 primeiroDigitoExtenso = "trinta";
 
+            // verifica segundo digito (unidade)
 
             if (segundoDigito == "1")
                 segundoDigitoExtenso = "um";
@@ -115,14 +99,21 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (segundoDigito == "9")
                 segundoDigitoExtenso = "nove";
 
-            if (segundoDigito == "0") 
+
+            if (segundoDigito == "0")
                 diaExtenso = primeiroDigitoExtenso;
             else
                 diaExtenso = primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
+            
+
+            // verifica primeiro digito caso seja menor que 20
 
             if (primeiroDigito == "1")
             {
-                if (segundoDigito == "1")
+                if (segundoDigito == "0")
+                    diaExtenso = "dez";
+
+                else if (segundoDigito == "1")
                     diaExtenso = "onze";
 
                 else if (segundoDigito == "2")
@@ -169,11 +160,15 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             var quartoDigito = ano.Substring(3, 1);
             var quartoDigitoExtenso = "";
 
+            // verifica primeiro digito (milhar)
+
             if (primeiroDigito == "1")
                 primeiroDigitoExtenso = "mil";
 
             else if (primeiroDigito == "2")
                 primeiroDigitoExtenso = "dois mil";
+
+            // verifica segundo digito (centena)
 
             if (segundoDigito == "1")
                 segundoDigitoExtenso = "cento";
@@ -202,6 +197,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (segundoDigito == "9")
                 segundoDigitoExtenso = "novecentos";
 
+            // verifica terceiro digito (dezena)
 
             if (terceiroDigito == "2")
                 terceiroDigitoExtenso = "vinte";
@@ -227,9 +223,10 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (terceiroDigito == "9")
                 terceiroDigitoExtenso = "noventa";
 
+            // verifica segundo digito (unidade)
 
             if (segundoDigito == "1")
-                terceiroDigitoExtenso = "um";
+                quartoDigitoExtenso = "um";
 
             else if (quartoDigito == "2")
                 quartoDigitoExtenso = "dois";
@@ -255,48 +252,59 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (quartoDigito == "9")
                 quartoDigitoExtenso = "nove";
 
-            var doisUltimosDigitos = terceiroDigitoExtenso + " e " + quartoDigitoExtenso;
+            var doisUltimosDigitosExtenso = "";
+
+            if (quartoDigito == "0")
+                doisUltimosDigitosExtenso = terceiroDigitoExtenso;
+
+            else if (terceiroDigito == "0")
+                doisUltimosDigitosExtenso = quartoDigitoExtenso;
+
+            else
+                doisUltimosDigitosExtenso = terceiroDigitoExtenso + " e " + quartoDigitoExtenso;
+
+            // verifica primeiro digito caso seja menor que 20
 
             if (terceiroDigito == "1")
             {
                 if (segundoDigito == "1")
-                    doisUltimosDigitos = "onze";
+                    doisUltimosDigitosExtenso = "onze";
 
                 else if (segundoDigito == "2")
-                    doisUltimosDigitos = "doze";
+                    doisUltimosDigitosExtenso = "doze";
 
                 else if (segundoDigito == "3")
-                    doisUltimosDigitos = "treze";
+                    doisUltimosDigitosExtenso = "treze";
 
                 else if (segundoDigito == "4")
-                    doisUltimosDigitos = "quatorze";
+                    doisUltimosDigitosExtenso = "quatorze";
 
                 else if (segundoDigito == "5")
-                    doisUltimosDigitos = "quinze";
+                    doisUltimosDigitosExtenso = "quinze";
 
                 else if (segundoDigito == "6")
-                    doisUltimosDigitos = "dezesseis";
+                    doisUltimosDigitosExtenso = "dezesseis";
 
                 else if (segundoDigito == "7")
-                    doisUltimosDigitos = "dezessete";
+                    doisUltimosDigitosExtenso = "dezessete";
 
                 else if (segundoDigito == "8")
-                    doisUltimosDigitos = "dezoito";
+                    doisUltimosDigitosExtenso = "dezoito";
 
                 else if (segundoDigito == "9")
-                    doisUltimosDigitos = "dezenove";
+                    doisUltimosDigitosExtenso = "dezenove";
             }
 
-            if (doisUltimosDigitos == " e ")
+            if (doisUltimosDigitosExtenso == " e ")
             {
                 return primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
             }
-            return primeiroDigitoExtenso + " " + segundoDigitoExtenso + " e " + doisUltimosDigitos;
+            return primeiroDigitoExtenso + " " + segundoDigitoExtenso + " e " + doisUltimosDigitosExtenso;
         }
 
         public string ObterDataCompletaPorExtenso()
         {
-            return ObterDiaPorExtenso() + " de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
+            return ObterDiaPorExtenso() + ", de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
         }
     }
 }
