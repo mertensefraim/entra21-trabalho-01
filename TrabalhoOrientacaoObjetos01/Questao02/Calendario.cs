@@ -16,60 +16,60 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             if (mes == "01")
             {
-                return "Janeiro";
+                return "janeiro";
             }
             
             else if (mes == "02")
             {
-                return "Fevereiro";
+                return "fevereiro";
             }
             
             else if (mes == "03")
             {
-                return "Março";
+                return "março";
             }
             
             else if (mes == "04")
             {
-                return "Abril";
+                return "abril";
             }
             
             else if (mes == "05")
             {
-                return "Maio";
+                return "maio";
             }
             
             else if (mes == "06")
             {
-                return "Junho";
+                return "junho";
             }
             
             else if (mes == "07")
             {
-                return "Julho";
+                return "julho";
             }
             
             else if (mes == "08")
             {
-                return "Agosto";
+                return "agosto";
             }
 
             else if (mes == "09")
             {
-                return "Setembro";
+                return "setembro";
             }
             
             else if (mes == "10")
             {
-                return "Outubro";
+                return "outubro";
             }
              
             else if (mes == "11")
             {
-                return "Novembro";
+                return "novembro";
             }
 
-            return "Dezembro";       
+            return "dezembro";       
         }
 
         public string ObterDiaPorExtenso()
@@ -79,12 +79,14 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             var primeiroDigitoExtenso = "";
             var segundoDigito = dia.Substring(1, 1);
             var segundoDigitoExtenso = "";
-            
+            var diaExtenso = "";
+
             if (primeiroDigito == "2")
                 primeiroDigitoExtenso = "vinte";
 
             else if (primeiroDigito == "3")
                 primeiroDigitoExtenso = "trinta";
+
 
             if (segundoDigito == "1")
                 segundoDigitoExtenso = "um";
@@ -113,7 +115,10 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (segundoDigito == "9")
                 segundoDigitoExtenso = "nove";
 
-            var diaExtenso = primeiroDigito + " e " + segundoDigitoExtenso;
+            if (segundoDigito == "0") 
+                diaExtenso = primeiroDigitoExtenso;
+            else
+                diaExtenso = primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
 
             if (primeiroDigito == "1")
             {
@@ -194,8 +199,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (segundoDigito == "8")
                 segundoDigitoExtenso = "oitocentos";
 
-            else if (segundoDigitoExtenso == "9")
+            else if (segundoDigito == "9")
                 segundoDigitoExtenso = "novecentos";
+
 
             if (terceiroDigito == "2")
                 terceiroDigitoExtenso = "vinte";
@@ -220,6 +226,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             
             else if (terceiroDigito == "9")
                 terceiroDigitoExtenso = "noventa";
+
 
             if (segundoDigito == "1")
                 terceiroDigitoExtenso = "um";
@@ -248,7 +255,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (quartoDigito == "9")
                 quartoDigitoExtenso = "nove";
 
-            var doisUltimosDigitos = primeiroDigito + " e " + segundoDigitoExtenso;
+            var doisUltimosDigitos = terceiroDigitoExtenso + " e " + quartoDigitoExtenso;
 
             if (terceiroDigito == "1")
             {
@@ -280,10 +287,14 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
                     doisUltimosDigitos = "dezenove";
             }
 
-            return primeiroDigito + segundoDigito + "e" + doisUltimosDigitos;
+            if (doisUltimosDigitos == " e ")
+            {
+                return primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
+            }
+            return primeiroDigitoExtenso + " " + segundoDigitoExtenso + " e " + doisUltimosDigitos;
         }
 
-        public string ObterDataCompleta()
+        public string ObterDataCompletaPorExtenso()
         {
             return ObterDiaPorExtenso() + " de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
         }
