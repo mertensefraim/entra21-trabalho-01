@@ -102,6 +102,8 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             if (segundoDigito == "0")
                 diaExtenso = primeiroDigitoExtenso;
+            else if (primeiroDigito == "0")
+                diaExtenso = segundoDigitoExtenso;
             else
                 diaExtenso = primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
             
@@ -267,44 +269,56 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             if (terceiroDigito == "1")
             {
-                if (segundoDigito == "1")
+                if (quartoDigito == "1")
                     doisUltimosDigitosExtenso = "onze";
 
-                else if (segundoDigito == "2")
+                else if (quartoDigito == "2")
                     doisUltimosDigitosExtenso = "doze";
 
-                else if (segundoDigito == "3")
+                else if (quartoDigito == "3")
                     doisUltimosDigitosExtenso = "treze";
 
-                else if (segundoDigito == "4")
+                else if (quartoDigito == "4")
                     doisUltimosDigitosExtenso = "quatorze";
 
-                else if (segundoDigito == "5")
+                else if (quartoDigito == "5")
                     doisUltimosDigitosExtenso = "quinze";
 
-                else if (segundoDigito == "6")
+                else if (quartoDigito == "6")
                     doisUltimosDigitosExtenso = "dezesseis";
 
-                else if (segundoDigito == "7")
+                else if (quartoDigito == "7")
                     doisUltimosDigitosExtenso = "dezessete";
 
-                else if (segundoDigito == "8")
+                else if (quartoDigito == "8")
                     doisUltimosDigitosExtenso = "dezoito";
 
-                else if (segundoDigito == "9")
+                else if (quartoDigito == "9")
                     doisUltimosDigitosExtenso = "dezenove";
             }
 
-            if (doisUltimosDigitosExtenso == " e ")
-            {
+            // Verifica se vai armazenar mil e *E* quinhentos ou mil quinhentos e vinte, por exemplo.
+            if (doisUltimosDigitosExtenso == "")
                 return primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
+
+            // Verifica se o ano é menor que 1000
+            else if (primeiroDigitoExtenso == "")
+            {
+                if (segundoDigito == "0" || terceiroDigito == "0")
+                    return doisUltimosDigitosExtenso;
+                return segundoDigitoExtenso + " e " + doisUltimosDigitosExtenso;
             }
+
+            // Verifica se vai colocar um espaço quando o segundo digito estiver vázio (se estiver vázio já vai colocar espaço)
+            else if (segundoDigitoExtenso == "" )
+                return primeiroDigitoExtenso + " " + segundoDigitoExtenso + "e " + doisUltimosDigitosExtenso;
+        
             return primeiroDigitoExtenso + " " + segundoDigitoExtenso + " e " + doisUltimosDigitosExtenso;
         }
 
         public string ObterDataCompletaPorExtenso()
         {
-            return ObterDiaPorExtenso() + ", de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
+            return ObterDiaPorExtenso() + " de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
         }
     }
 }

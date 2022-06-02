@@ -11,8 +11,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
         public void Executar()
         {
             var calendario = new Calendario();
-            Console.Write("Digite uma data. " +
-                "\nObs.: deve estar no formato ano/mes/dia: ");
+            Console.Write("Digite uma data na formatação yyyy/MM/dd: ");
             calendario.Data = Convert.ToDateTime(Console.ReadLine());
       
             Console.WriteLine($"A data digitada foi {calendario.Data.ToString("dd/MM/yyyy")}" +
