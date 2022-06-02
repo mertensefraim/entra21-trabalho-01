@@ -10,7 +10,8 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
     {
         public void Executar()
         {
-            Console.WriteLine("Quetão 02");
+
+
         }
     }
 }

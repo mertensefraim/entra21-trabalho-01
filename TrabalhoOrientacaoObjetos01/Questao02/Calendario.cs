@@ -84,7 +84,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
                 primeiroDigitoExtenso = "vinte";
 
             else if (primeiroDigito == "3")
-                primeiroDigito = "trinta";
+                primeiroDigitoExtenso = "trinta";
 
             if (segundoDigito == "1")
                 segundoDigitoExtenso = "um";
@@ -146,6 +146,146 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             }
 
             return diaExtenso;
+        }
+
+        public string ObterAnoPorExtenso()
+        {
+            var ano = Data.ToString("yyyy");
+
+            var primeiroDigito = ano.Substring(0, 1);
+            var primeiroDigitoExtenso = "";
+
+            var segundoDigito = ano.Substring(1, 1);
+            var segundoDigitoExtenso = "";
+
+            var terceiroDigito = ano.Substring(2, 1);
+            var terceiroDigitoExtenso = "";
+
+            var quartoDigito = ano.Substring(3, 1);
+            var quartoDigitoExtenso = "";
+
+            if (primeiroDigito == "1")
+                primeiroDigitoExtenso = "mil";
+
+            else if (primeiroDigito == "2")
+                primeiroDigitoExtenso = "dois mil";
+
+            if (segundoDigito == "1")
+                segundoDigitoExtenso = "cento";
+
+            else if (segundoDigito == "2")
+                segundoDigitoExtenso = "duzentos";
+
+            else if (segundoDigito == "3")
+                segundoDigitoExtenso = "trezentos";
+
+            else if (segundoDigito == "4")
+                segundoDigitoExtenso = "quatrocentos";
+
+            else if (segundoDigito == "5")
+                segundoDigitoExtenso = "quinhentos";
+
+            else if (segundoDigito == "6")
+                segundoDigitoExtenso = "seiscentos";
+
+            else if (segundoDigito == "7")
+                segundoDigitoExtenso = "setecentos";
+
+            else if (segundoDigito == "8")
+                segundoDigitoExtenso = "oitocentos";
+
+            else if (segundoDigitoExtenso == "9")
+                segundoDigitoExtenso = "novecentos";
+
+            if (terceiroDigito == "2")
+                terceiroDigitoExtenso = "vinte";
+
+            else if (terceiroDigito == "3")
+                terceiroDigitoExtenso = "trinta";
+            
+            else if (terceiroDigito == "4")
+                terceiroDigitoExtenso = "quarenta";
+            
+            else if (terceiroDigito == "5")
+                terceiroDigitoExtenso = "cinquenta";
+            
+            else if (terceiroDigito == "6")
+                terceiroDigitoExtenso = "sessenta";
+            
+            else if (terceiroDigito == "7")
+                terceiroDigitoExtenso = "setenta";
+            
+            else if (terceiroDigito == "8")
+                terceiroDigitoExtenso = "oitenta";
+            
+            else if (terceiroDigito == "9")
+                terceiroDigitoExtenso = "noventa";
+
+            if (segundoDigito == "1")
+                terceiroDigitoExtenso = "um";
+
+            else if (quartoDigito == "2")
+                quartoDigitoExtenso = "dois";
+
+            else if (quartoDigito == "3")
+                quartoDigitoExtenso = "três";
+
+            else if (quartoDigito == "4")
+                quartoDigitoExtenso = "quatro";
+
+            else if (quartoDigito == "5")
+                quartoDigitoExtenso = "cinco";
+
+            else if (quartoDigito == "6")
+                quartoDigitoExtenso = "seis";
+
+            else if (quartoDigito == "7")
+                quartoDigitoExtenso = "sete";
+
+            else if (quartoDigito == "8")
+                quartoDigitoExtenso = "oito";
+
+            else if (quartoDigito == "9")
+                quartoDigitoExtenso = "nove";
+
+            var doisUltimosDigitos = primeiroDigito + " e " + segundoDigitoExtenso;
+
+            if (terceiroDigito == "1")
+            {
+                if (segundoDigito == "1")
+                    doisUltimosDigitos = "onze";
+
+                else if (segundoDigito == "2")
+                    doisUltimosDigitos = "doze";
+
+                else if (segundoDigito == "3")
+                    doisUltimosDigitos = "treze";
+
+                else if (segundoDigito == "4")
+                    doisUltimosDigitos = "quatorze";
+
+                else if (segundoDigito == "5")
+                    doisUltimosDigitos = "quinze";
+
+                else if (segundoDigito == "6")
+                    doisUltimosDigitos = "dezesseis";
+
+                else if (segundoDigito == "7")
+                    doisUltimosDigitos = "dezessete";
+
+                else if (segundoDigito == "8")
+                    doisUltimosDigitos = "dezoito";
+
+                else if (segundoDigito == "9")
+                    doisUltimosDigitos = "dezenove";
+            }
+
+            return primeiroDigito + segundoDigito + "e" + doisUltimosDigitos;
+        }
+
+        public string ObterDataCompleta()
+        {
+            return ObterDiaPorExtenso() + " de " + ObterMesPorExtenso() + " de " + ObterAnoPorExtenso();
         }
     }
 }
