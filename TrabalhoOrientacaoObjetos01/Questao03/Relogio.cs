@@ -10,55 +10,61 @@ namespace TrabalhoOrientacaoObjetos01.Questao03
     {
         public DateTime Hora;
 
-        public string ObterHoraPorExtenso()
+       /* public string ObterHoraPorExtenso()
         {
-            DateTime hora = hora.ToString("HH");
+            var hora = DateTime("HH");
 
             if (hora < 10)
-            {    
+            {
+                hora.ToString("HH");
+                var primeiroNumero = hora.Substring(0, 1);
+                var segundoNumero = hora.Substring(1, 1);
 
-                if (hora == 0)
+                if (primeiroNumero == 0)
                 {
-                    return "Zero Hora, ";
-                }
-                else if (hora == 1)
-                {
-                    return "Uma Hora, ";
-                }
-                else if (hora == 2)
-                {
-                    return "Duas Horas, ";
-                }
-                else if (hora == 3)
-                {
-                    return "Três Horas, ";
-                }
-                else if (hora == 4)
-                {
-                    return "Quatro Horas, ";
-                }
-                else if (hora == 5)
-                {
-                    return "Cinco Horas, ";
-                }
-                else if (hora == 6)
-                {
-                    return "Seis Horas, ";
-                }
-                else if (hora == 7)
-                {
-                    return "Sete Horas, ";
-                }
-                else if (hora == 8)
-                {
-                    return "Oito Horas, ";
-                }
-                else 
-                {
-                    return "Nove Horas, ";
-                }
+                    if (segundoNumero == 0)
+                    {
+                        return "Zero Hora, ";
+                    }
+                    else if (segundoNumero == 1)
+                    {
+                        return "Uma Hora, ";
+                    }
+                    else if (segundoNumero == 2)
+                    {
+                        return "Duas Horas, ";
+                    }
+                    else if (segundoNumero == 3)
+                    {
+                        return "Três Horas, ";
+                    }
+                    else if (segundoNumero == 4)
+                    {
+                        return "Quatro Horas, ";
+                    }
+                    else if (segundoNumero == 5)
+                    {
+                        return "Cinco Horas, ";
+                    }
+                    else if (segundoNumero == 6)
+                    {
+                        return "Seis Horas, ";
+                    }
+                    else if (segundoNumero == 7)
+                    {
+                        return "Sete Horas, ";
+                    }
+                    else if (segundoNumero == 8)
+                    {
+                        return "Oito Horas, ";
+                    }
+                    else
+                    {
+                        return "Nove Horas, ";
+                    }
+                }                
             }
-            else if (hora > 10)
+            else if (hora >= 10)
             { 
                 hora.ToString("HH");
                 var primeiroNumero = hora.Substring(0, 1);
@@ -134,6 +140,8 @@ namespace TrabalhoOrientacaoObjetos01.Questao03
                     }
                 }
             }
-        }
+            return "";
+        }*/
+        
     }
 }
