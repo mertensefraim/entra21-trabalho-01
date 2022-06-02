@@ -15,7 +15,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
         public string ValorPorExtenso = "";
 
         //Métodos
-        public void ObterDecimalPorExtenso()
+        public string ObterDecimalPorExtenso()
         {
             if (ValorAuxiliar > 0.00)
             {
@@ -25,10 +25,15 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 VerificarCentenaDezena = false;
                 ValorPorExtenso += "e ";
                 ObterDezenaPorExtenso();
-                ValorPorExtenso += "centésimo";
+                ValorPorExtenso += "centésimos";
             }
+            else if( Valor == 0.00)
+            {
+                ValorPorExtenso = "zero";
+            }
+                return ValorPorExtenso;
         }
-        public void ObterUnidadePorExtenso()
+        public string ObterUnidadePorExtenso()
         {
             if (VerificarCentenaDezena == true)
             {
@@ -84,8 +89,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
             }
             ObterDecimalPorExtenso();
+            return ValorPorExtenso;
         }
-        public void ObterDezenaPorExtenso()
+        public string ObterDezenaPorExtenso()
         {
             if (VerificarCentenaDezena == true)
             {
@@ -197,8 +203,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
             }
             ObterUnidadePorExtenso();
+            return ValorPorExtenso;
         }
-        public void ObterCentenaPorExtenso()
+        public string ObterCentenaPorExtenso()
         {
             if (ValorAuxiliar >= 100.00)
             {
@@ -258,8 +265,9 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
             }
             ObterDezenaPorExtenso();
+            return ValorPorExtenso;
         }
-        public void ObterUidadeDeMilharPorExtenso()
+        public string ObterUidadeDeMilharPorExtenso()
         {
             if (ValorAuxiliar >= 1000.00)
             {
@@ -310,6 +318,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
             }
             ObterCentenaPorExtenso();
+            return ValorPorExtenso;
         }
         public string ObterNumeroCompletoPorExtenso()
         {
