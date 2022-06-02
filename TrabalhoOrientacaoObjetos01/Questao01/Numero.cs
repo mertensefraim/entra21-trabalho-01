@@ -10,7 +10,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
     {
         //Propriedades
         public double Valor;
-        private double ValorAuxiliar;
+        public double ValorAuxiliar ;
         private bool VerificarCentenaDezena = false;
         public string ValorPorExtenso = "";
 
@@ -19,19 +19,20 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
         {
             if (ValorAuxiliar > 0.00)
             {
-                string converterParaInteiro = Math.Round(ValorAuxiliar, 2) + "";
-                var posicaoPonto = converterParaInteiro.IndexOf(",") + 1;
-                ValorAuxiliar = Convert.ToDouble(converterParaInteiro.Substring(posicaoPonto, 2));
+                ValorAuxiliar = (Math.Round(ValorAuxiliar, 2) * 100);
                 VerificarCentenaDezena = false;
-                ValorPorExtenso += "e ";
+                if (Valor > 0.99)
+                {
+                    ValorPorExtenso += "e ";
+                }
                 ObterDezenaPorExtenso();
                 ValorPorExtenso += "centésimos";
             }
-            else if( Valor == 0.00)
+            else if (Valor == 0.00)
             {
                 ValorPorExtenso = "zero";
             }
-                return ValorPorExtenso;
+            return ValorPorExtenso;
         }
         public string ObterUnidadePorExtenso()
         {
@@ -64,7 +65,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
                 else if (ValorAuxiliar <= 5.99)
                 {
-                    ValorPorExtenso += "cinso ";
+                    ValorPorExtenso += "cinco ";
                     ValorAuxiliar += -5;
                 }
                 else if (ValorAuxiliar <= 6.99)

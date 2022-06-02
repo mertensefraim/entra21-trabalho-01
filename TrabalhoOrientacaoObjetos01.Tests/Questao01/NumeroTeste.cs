@@ -13,6 +13,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
     {
 
         [Theory]
+        [InlineData(0.00, "zero")]
         [InlineData(0.01, "um centésimos")]
         [InlineData(0.02, "dois centésimos")]
         [InlineData(0.03, "três centésimos")]
@@ -26,8 +27,8 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         [InlineData(0.11, "onze centésimos")]
         [InlineData(0.12, "doze centésimos")]
         [InlineData(0.13, "treze centésimos")]
-        [InlineData(0.14, "duatorze centésimos")]
-        [InlineData(0.15, "duinze centésimos")]
+        [InlineData(0.14, "catorze centésimos")]
+        [InlineData(0.15, "quinze centésimos")]
         [InlineData(0.16, "dezesseis centésimos")]
         [InlineData(0.17, "dezessete centésimos")]
         [InlineData(0.18, "dezoito centésimos")]
@@ -36,7 +37,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         [InlineData(0.21, "vinte e um centésimos")]
         [InlineData(0.22, "vinte e dois centésimos")]
         [InlineData(0.23, "vinte e três centésimos")]
-        [InlineData(0.24, "vinte e quatr centésimos")]
+        [InlineData(0.24, "vinte e quatro centésimos")]
         [InlineData(0.25, "vinte e cinco centésimos")]
         [InlineData(0.26, "vinte e seis centésimos")]
         [InlineData(0.27, "vinte e sete centésimos")]
@@ -52,16 +53,16 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         [InlineData(0.37, "trinta e sete centésimos")]
         [InlineData(0.38, "trinta e oito centésimos")]
         [InlineData(0.39, "trinta e nove centésimos")]
-        [InlineData(0.40, "carenta centésimos")]
-        [InlineData(0.41, "carenta e um centésimos")]
-        [InlineData(0.42, "carenta e dois centésimos")]
-        [InlineData(0.43, "carenta e três centésimos")]
-        [InlineData(0.44, "carenta e quatro centésimos")]
-        [InlineData(0.45, "carenta e cinco centésimos")]
-        [InlineData(0.46, "carenta e seis centésimos")]
-        [InlineData(0.47, "carenta e sete centésimos")]
-        [InlineData(0.48, "carenta e oito centésimos")]
-        [InlineData(0.49, "carenta e nove centésimos")]
+        [InlineData(0.40, "quarenta centésimos")]
+        [InlineData(0.41, "quarenta e um centésimos")]
+        [InlineData(0.42, "quarenta e dois centésimos")]
+        [InlineData(0.43, "quarenta e três centésimos")]
+        [InlineData(0.44, "quarenta e quatro centésimos")]
+        [InlineData(0.45, "quarenta e cinco centésimos")]
+        [InlineData(0.46, "quarenta e seis centésimos")]
+        [InlineData(0.47, "quarenta e sete centésimos")]
+        [InlineData(0.48, "quarenta e oito centésimos")]
+        [InlineData(0.49, "quarenta e nove centésimos")]
         [InlineData(0.50, "cinquenta centésimos")]
         [InlineData(0.51, "cinquenta e um centésimos")]
         [InlineData(0.52, "cinquenta e dois centésimos")]
@@ -93,7 +94,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         [InlineData(0.78, "setenta e oito centésimos")]
         [InlineData(0.79, "setenta e nove centésimos")]
         [InlineData(0.80, "oitenta centésimos")]
-        [InlineData(0.81, "oitenta e um  centésimos")]
+        [InlineData(0.81, "oitenta e um centésimos")]
         [InlineData(0.82, "oitenta e dois centésimos")]
         [InlineData(0.83, "oitenta e três centésimos")]
         [InlineData(0.84, "oitenta e quatro centésimos")]
@@ -117,8 +118,8 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         {
             // Arrange
             var numero = new Numero();
+            numero.ValorAuxiliar = valor;
             numero.Valor = valor;
-
             // Act
             var numeroPorExtenso = numero.ObterDecimalPorExtenso();
 
