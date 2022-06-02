@@ -10,7 +10,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
     {
         //Propriedades
         public double Valor;
-        private double ValorAuxiliar;
+        public double ValorAuxiliar ;
         private bool VerificarCentenaDezena = false;
         public string ValorPorExtenso = "";
 
@@ -19,23 +19,24 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
         {
             if (ValorAuxiliar > 0.00)
             {
-                string converterParaInteiro = Math.Round(ValorAuxiliar, 2) + "";
-                var posicaoPonto = converterParaInteiro.IndexOf(",") + 1;
-                ValorAuxiliar = Convert.ToDouble(converterParaInteiro.Substring(posicaoPonto, 2));
+                ValorAuxiliar = Math.Round((ValorAuxiliar * 100),2);
                 VerificarCentenaDezena = false;
-                ValorPorExtenso += "e ";
+                if (Valor > 0.99)
+                {
+                    ValorPorExtenso += "e ";
+                }
                 ObterDezenaPorExtenso();
                 ValorPorExtenso += "centésimos";
             }
-            else if( Valor == 0.00)
+            else if (Valor == 0.00)
             {
                 ValorPorExtenso = "zero";
             }
-                return ValorPorExtenso;
+            return ValorPorExtenso;
         }
         public string ObterUnidadePorExtenso()
         {
-            if (VerificarCentenaDezena == true)
+            if (VerificarCentenaDezena == true && ValorAuxiliar >0.00)
             {
                 ValorPorExtenso += "e ";
                 VerificarCentenaDezena = false;
@@ -64,7 +65,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 }
                 else if (ValorAuxiliar <= 5.99)
                 {
-                    ValorPorExtenso += "cinso ";
+                    ValorPorExtenso += "cinco ";
                     ValorAuxiliar += -5;
                 }
                 else if (ValorAuxiliar <= 6.99)
@@ -156,31 +157,31 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 else if (ValorAuxiliar <= 29.99)
                 {
                     ValorPorExtenso += "vinte ";
-                    ValorAuxiliar += -20;
+                    ValorAuxiliar += - 20;
                     VerificarCentenaDezena = true;
                 }
                 else if (ValorAuxiliar <= 39.99)
                 {
                     ValorPorExtenso += "trinta ";
-                    ValorAuxiliar += -30;
+                    ValorAuxiliar += - 30;
                     VerificarCentenaDezena = true;
                 }
                 else if (ValorAuxiliar <= 49.99)
                 {
                     ValorPorExtenso += "quarenta ";
-                    ValorAuxiliar += -40;
+                    ValorAuxiliar += - 40;
                     VerificarCentenaDezena = true;
                 }
                 else if (ValorAuxiliar <= 59.99)
                 {
                     ValorPorExtenso += "cinquenta ";
-                    ValorAuxiliar += -50;
+                    ValorAuxiliar += - 50;
                     VerificarCentenaDezena = true;
                 }
                 else if (ValorAuxiliar <= 69.99)
                 {
                     ValorPorExtenso += "sessenta ";
-                    ValorAuxiliar += -60;
+                    ValorAuxiliar += - 60;
                     VerificarCentenaDezena = true;
                 }
                 else if (ValorAuxiliar <= 79.99)
@@ -198,7 +199,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 else if (ValorAuxiliar <= 99.99)
                 {
                     ValorPorExtenso += "noventa ";
-                    ValorAuxiliar += -90;
+                    ValorAuxiliar += - 90;
                     VerificarCentenaDezena = true;
                 }
             }
