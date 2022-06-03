@@ -319,6 +319,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             else if (segundoDigitoExtenso == "" && doisUltimosDigitosExtenso != "")
                 return primeiroDigitoExtenso  + " e " + doisUltimosDigitosExtenso;
 
+            // Verifica se os últimos digitos são 0
             else if (doisUltimosDigitosExtenso == "")
                 return primeiroDigitoExtenso;
 

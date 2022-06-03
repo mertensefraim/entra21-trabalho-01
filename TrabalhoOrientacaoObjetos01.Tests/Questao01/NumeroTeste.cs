@@ -243,6 +243,30 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         }
 
         [Theory]
+        [InlineData(999.00, "novecentos e noventa e nove ")]
+        [InlineData(100.00, "cem ")]
+        [InlineData(200.00, "duzentos ")]
+        [InlineData(300.00, "trezentos ")]
+        [InlineData(400.00, "quatrocentos ")]
+        [InlineData(500.00, "quinhentos ")]
+        [InlineData(600.00, "seiscentos ")]
+        [InlineData(700.00, "setecentos ")]
+        [InlineData(800.00, "oitocentos ")]
+        [InlineData(900.00, "novecentos ")]
+        public void Certificando_Retorno_ObterCentenaPorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterCentenaPorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
+        [Theory]
         [InlineData(0.00, "zero")]
         [InlineData(1.00, "um ")]
         [InlineData(2.00, "dois ")]
@@ -267,23 +291,47 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
         }
 
         [Theory]
-        [InlineData(999.00, "novecentos e noventa e nove ")]
-        [InlineData(100.00, "cem ")]
-        [InlineData(200.00, "duzentos ")]
-        [InlineData(300.00, "trezentos ")]
-        [InlineData(400.00, "quatrocentos ")]
-        [InlineData(500.00, "quinhentos ")]
-        [InlineData(600.00, "seiscentos ")]
-        [InlineData(700.00, "setecentos ")]
-        [InlineData(800.00, "oitocentos ")]
-        [InlineData(900.00, "novecentos ")]
-        public void Certificando_Retorno_ObterCentenaPorExtenso(double valor, string valorPorExtenso)
+        [InlineData(9999.00, "nove mil novecentos e noventa e nove ")]
+        [InlineData(1000.00, "mil ")]
+        [InlineData(2000.00, "dois mil ")]
+        [InlineData(3000.00, "três mil ")]
+        [InlineData(4000.00, "quatro mil ")]
+        [InlineData(5000.00, "cinco mil ")]
+        [InlineData(6000.00, "seis mil ")]
+        [InlineData(7000.00, "sete mil ")]
+        [InlineData(8000.00, "oito mil ")]
+        [InlineData(9000.00, "nove mil ")]
+        public void Certificando_Retorno_ObterUidadeDeMilharPorExtenso(double valor, string valorPorExtenso)
         {           // Arran
             var numero = new Numero();
             numero.ValorAuxiliar = valor;
             numero.Valor = valor;
             // Act
-            var numeroPorExtenso = numero.ObterCentenaPorExtenso();
+            var numeroPorExtenso = numero.ObterUidadeDeMilharPorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
+        [Theory]
+        [InlineData(9999.99, "nove mil novecentos e noventa e nove e noventa e nove centésimos")]
+        [InlineData(1991.20, "mil novecentos e noventa e um e vinte centésimos")]
+        [InlineData(177.84, "cento e setenta e sete e oitenta e quatro centésimos")]
+        [InlineData(100.99, "cem e noventa e nove centésimos")]
+        [InlineData(4284.00, "quatro mil duzentos e oitenta e quatro ")]
+        [InlineData(4643.34, "quatro mil seiscentos e quarenta e três e trinta e quatro centésimos")]
+        [InlineData(6001.00, "seis mil um ")]
+        [InlineData(10.10, "dez e dez centésimos")]
+        [InlineData(0.32, "trinta e dois centésimos")]
+        [InlineData(57.00, "cinquenta e sete ")]
+        public void Certificando_Retorno_ObterNumeroCompletoPorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterNumeroCompletoPorExtenso();
 
             // Assert
             numeroPorExtenso.Should().Be(valorPorExtenso);
