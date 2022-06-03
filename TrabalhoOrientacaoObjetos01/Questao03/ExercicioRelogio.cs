@@ -1,7 +1,8 @@
 ﻿namespace TrabalhoOrientacaoObjetos01.Questao03
 {
+    // Wellington Scaburri
     public class ExercicioRelogio
-    {
+    {        
         public void Executar()
         {
             var relogio = new Relogio();

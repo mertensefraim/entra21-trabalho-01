@@ -6,17 +6,17 @@ var escolhaUsuario = 0;
 
 while (escolhaUsuario != 99)
 {
-    Console.Write(@"----------Questões----------
-01 - Questão 01
-02 - Questão 02
-03 - Questão 03
-99 - Sair
-Escolha a questão desejada: ");
 
     var validar = false;
 
     while (validar == false)
     {
+        Console.Write(@"----------Questões----------
+01 - Questão 01
+02 - Questão 02
+03 - Questão 03
+99 - Sair
+Escolha a questão desejada: ");
         try
         {
             escolhaUsuario = Convert.ToInt32(Console.ReadLine());

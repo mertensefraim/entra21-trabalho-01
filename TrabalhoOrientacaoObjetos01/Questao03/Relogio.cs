@@ -1,5 +1,6 @@
 ﻿namespace TrabalhoOrientacaoObjetos01.Questao03
 {
+    // Wellington Scaburri
     public class Relogio
     {
         public DateTime Hora;
