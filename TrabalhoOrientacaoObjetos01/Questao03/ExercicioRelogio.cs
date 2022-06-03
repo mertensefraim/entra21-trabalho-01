@@ -11,7 +11,7 @@
             {
                 try
                 {
-                    Console.Write("Informe a hora: ");
+                    Console.Write("Informe a hora (No formato horas:minutos:segundos): ");
                     relogio.Hora = Convert.ToDateTime(Console.ReadLine());
 
                     opcaoValida = true;
@@ -25,7 +25,7 @@
 
             var horaCompletaExtenso = relogio.ObterHoraCompletaPorExtenso();
 
-            Console.WriteLine(horaCompletaExtenso);
+            Console.WriteLine("Hora por Extenso: " + horaCompletaExtenso);
         }
     }
 }
