@@ -31,18 +31,22 @@ namespace TrabalhoOrientacaoObjetos01.Questao01
                 {
                     Console.Clear();
                     Console.Write("Infome número: ");
-                    numero.Valor = Math.Round(Convert.ToDouble(Console.ReadLine()),2);
-                    if (valor <= 9999.99)
+                    numero.Valor = Math.Round(Convert.ToDouble(Console.ReadLine()), 2);
+                    if (valor <= 9999.99 && valor >= 0.00)
                     {
                         validar = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Valor invalido");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    Console.WriteLine(ex + ": Valor invalido");
                     Console.ReadKey();
                 }
-            } 
+            }
             Console.WriteLine(numero.ObterNumeroCompletoPorExtenso());
             Console.ReadKey();
         }
