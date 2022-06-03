@@ -38,7 +38,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
         [InlineData("22:54:52", "Vinte e duas horas")]
         [InlineData("23:44:47", "Vinte e três horas")]
 
-        public void Validar_Todas_As_Horas_Por_Extenso(string hora, string horaExtenso)
+        public void Validar_ObterHoraPorExtenso(string hora, string horaExtenso)
         {
             //Arrange
             var relogio = new Relogio();
@@ -115,7 +115,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
         [InlineData("23:59:11", "cinquenta e nove minutos")]
 
 
-        public void Validar_Todos_Os_Minutos_Por_Extenso(string hora, string minutoExtenso)
+        public void Validar_ObterMinutoPorExtenso(string hora, string minutoExtenso)
         {
             //Arrange
             var relogio = new Relogio();
@@ -128,10 +128,107 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
             minutoPorExtenso.Should().Be(minutoExtenso);
         }
 
+        [Theory]
 
+        [InlineData("12:12:00", "zero segundos")]
+        [InlineData("01:01:01", "um segundo")]
+        [InlineData("03:02:02", "dois segundos")]
+        [InlineData("03:03:03", "três segundos")]
+        [InlineData("04:04:04", "quatro segundos")]
+        [InlineData("08:05:05", "cinco segundos")]
+        [InlineData("04:06:06", "seis segundos")]
+        [InlineData("06:07:07", "sete segundos")]
+        [InlineData("04:08:08", "oito segundos")]
+        [InlineData("14:09:09", "nove segundos")]
+        [InlineData("12:10:10", "dez segundos")]
+        [InlineData("13:11:11", "onze segundos")]
+        [InlineData("12:12:12", "doze segundos")]
+        [InlineData("14:13:13", "treze segundos")]
+        [InlineData("12:14:14", "quatorze segundos")]
+        [InlineData("19:14:15", "quinze segundos")]
+        [InlineData("12:33:16", "dezesseis segundos")]
+        [InlineData("17:17:17", "dezessete segundos")]
+        [InlineData("18:19:18", "dezoito segundos")]
+        [InlineData("22:19:19", "dezenove segundos")]
+        [InlineData("04:20:20", "vinte segundos")]
+        [InlineData("14:21:21", "vinte e um segundos")]
+        [InlineData("05:22:22", "vinte e dois segundos")]
+        [InlineData("11:23:23", "vinte e três segundos")]
+        [InlineData("12:24:24", "vinte e quatro segundos")]
+        [InlineData("23:25:25", "vinte e cinco segundos")]
+        [InlineData("04:26:26", "vinte e seis segundos")]
+        [InlineData("07:27:27", "vinte e sete segundos")]
+        [InlineData("09:28:28", "vinte e oito segundos")]
+        [InlineData("01:29:29", "vinte e nove segundos")]
+        [InlineData("05:40:30", "trinta segundos")]
+        [InlineData("14:31:31", "trinta e um segundos")]
+        [InlineData("06:32:32", "trinta e dois segundos")]
+        [InlineData("03:33:33", "trinta e três segundos")]
+        [InlineData("11:34:34", "trinta e quatro segundos")]
+        [InlineData("04:35:35", "trinta e cinco segundos")]
+        [InlineData("05:11:36", "trinta e seis segundos")]
+        [InlineData("08:37:37", "trinta e sete segundos")]
+        [InlineData("16:38:38", "trinta e oito segundos")]
+        [InlineData("03:39:39", "trinta e nove segundos")]
+        [InlineData("22:20:40", "quarenta segundos")]
+        [InlineData("14:41:41", "quarenta e um segundos")]
+        [InlineData("19:42:42", "quarenta e dois segundos")]
+        [InlineData("22:43:43", "quarenta e três segundos")]
+        [InlineData("11:44:44", "quarenta e quatro segundos")]
+        [InlineData("04:45:45", "quarenta e cinco segundos")]
+        [InlineData("05:46:46", "quarenta e seis segundos")]
+        [InlineData("11:47:47", "quarenta e sete segundos")]
+        [InlineData("16:48:48", "quarenta e oito segundos")]
+        [InlineData("03:49:49", "quarenta e nove segundos")]
+        [InlineData("03:50:50", "cinquenta segundos")]
+        [InlineData("19:51:51", "cinquenta e um segundos")]
+        [InlineData("19:52:52", "cinquenta e dois segundos")]
+        [InlineData("14:53:53", "cinquenta e três segundos")]
+        [InlineData("06:54:54", "cinquenta e quatro segundos")]
+        [InlineData("02:02:55", "cinquenta e cinco segundos")]
+        [InlineData("08:44:56", "cinquenta e seis segundos")]
+        [InlineData("18:27:57", "cinquenta e sete segundos")]
+        [InlineData("11:44:58", "cinquenta e oito segundos")]
+        [InlineData("23:05:59", "cinquenta e nove segundos")]
 
+        public void Validar_ObterSegundoPorExtenso(string hora, string segundoExtenso)
+        {
+            //Arrange
+            var relogio = new Relogio();
+            relogio.Hora = Convert.ToDateTime(hora);
 
+            //Act
+            var segundoPorExtenso = relogio.ObterSegundoPorExtenso();
 
+            //Assert
+            segundoPorExtenso.Should().Be(segundoExtenso);
+        }
+
+        [Theory]
+
+        [InlineData("01:15:23", "Uma hora, quinze minutos e vinte e três segundos")]
+        [InlineData("02:23:15", "Duas horas, vinte e três minutos e quinze segundos")]
+        [InlineData("03:25:40", "Três horas, vinte e cinco minutos e quarenta segundos")]
+        [InlineData("07:30:39", "Sete horas, trinta minutos e trinta e nove segundos")]
+        [InlineData("10:15:32", "Dez horas, quinze minutos e trinta e dois segundos")]
+        [InlineData("11:04:01", "Onze horas, quatro minutos e um segundo")]
+        [InlineData("15:33:49", "Quinze horas, trinta e três minutos e quarenta e nove segundos")]
+        [InlineData("19:50:55", "Dezenove horas, cinquenta minutos e cinquenta e cinco segundos")]
+        [InlineData("21:01:04", "Vinte e uma horas, um minuto e quatro segundos")]
+        [InlineData("23:44:58", "Vinte e três horas, quarenta e quatro minutos e cinquenta e oito segundos")]
+
+        public void Validar_ObterHoraCompletaPorExtenso(string hora, string horaCompletaExtenso)
+        {
+            //Arrange
+            var relogio = new Relogio();
+            relogio.Hora = Convert.ToDateTime(hora);
+
+            //Act
+            var horaCompletaPorExtenso = relogio.ObterHoraCompletaPorExtenso();
+
+            //Assert
+            horaCompletaPorExtenso.Should().Be(horaCompletaExtenso);
+        }
 
     }
 }
