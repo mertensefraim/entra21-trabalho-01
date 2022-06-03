@@ -227,7 +227,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             // verifica segundo digito (unidade)
 
-            if (segundoDigito == "1")
+            if (quartoDigito == "1")
                 quartoDigitoExtenso = "um";
 
             else if (quartoDigito == "2")
@@ -256,7 +256,10 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             var doisUltimosDigitosExtenso = "";
 
-            if (quartoDigito == "0")
+            if (segundoDigito == "0" && terceiroDigito == "0" && quartoDigito == "0")
+                doisUltimosDigitosExtenso = "";
+
+            else if (quartoDigito == "0")
                 doisUltimosDigitosExtenso = terceiroDigitoExtenso;
 
             else if (terceiroDigito == "0")
@@ -269,7 +272,10 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
 
             if (terceiroDigito == "1")
             {
-                if (quartoDigito == "1")
+                if (quartoDigito == "0")
+                    doisUltimosDigitosExtenso = "dez";
+
+                else if (quartoDigito == "1")
                     doisUltimosDigitosExtenso = "onze";
 
                 else if (quartoDigito == "2")
@@ -298,8 +304,8 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             }
 
             // Verifica se vai armazenar mil e *E* quinhentos ou mil quinhentos e vinte, por exemplo.
-            if (doisUltimosDigitosExtenso == "")
-                return primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
+            if (terceiroDigitoExtenso == "" && quartoDigitoExtenso == "" && segundoDigitoExtenso != "")
+                  return primeiroDigitoExtenso + " e " + segundoDigitoExtenso;
 
             // Verifica se o ano é menor que 1000
             else if (primeiroDigitoExtenso == "")
@@ -310,9 +316,12 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
             }
 
             // Verifica se vai colocar um espaço quando o segundo digito estiver vázio (se estiver vázio já vai colocar espaço)
-            else if (segundoDigitoExtenso == "" )
-                return primeiroDigitoExtenso + " " + segundoDigitoExtenso + "e " + doisUltimosDigitosExtenso;
-        
+            else if (segundoDigitoExtenso == "" && doisUltimosDigitosExtenso != "")
+                return primeiroDigitoExtenso  + " e " + doisUltimosDigitosExtenso;
+
+            else if (doisUltimosDigitosExtenso == "")
+                return primeiroDigitoExtenso;
+
             return primeiroDigitoExtenso + " " + segundoDigitoExtenso + " e " + doisUltimosDigitosExtenso;
         }
 

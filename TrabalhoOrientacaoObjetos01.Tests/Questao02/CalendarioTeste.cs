@@ -113,10 +113,10 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao02
         [InlineData("1997/10/24", "mil novecentos e noventa e sete")]
         [InlineData("1998/10/24", "mil novecentos e noventa e oito")]
         [InlineData("1999/10/24", "mil novecentos e noventa e nove")]
-        [InlineData("2000/10/24", "dois mil ")]
+        [InlineData("2000/10/24", "dois mil")]
         [InlineData("2001/10/24", "dois mil e um")]
         [InlineData("2002/10/24", "dois mil e dois")]
-        [InlineData("2003/10/24", "dois mil e tres")]
+        [InlineData("2003/10/24", "dois mil e três")]
         [InlineData("2004/10/24", "dois mil e quatro")]
         [InlineData("2005/10/24", "dois mil e cinco")]
         [InlineData("2006/10/24", "dois mil e seis")]
@@ -134,17 +134,16 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao02
         [InlineData("2018/10/24", "dois mil e dezoito")]
         [InlineData("2019/10/24", "dois mil e dezenove")]
         [InlineData("2020/10/24", "dois mil e vinte")]
-        [InlineData("2021/10/24", "dois mil e vinte um")]
-        [InlineData("2022/10/24", "dois mil e vinte dois")]
-        [InlineData("2023/10/24", "dois mil e vinte três")]
-        [InlineData("2024/10/24", "dois mil e vinte quatro")]
-        [InlineData("2025/10/24", "dois mil e vinte cinco")]
-        [InlineData("2026/10/24", "dois mil e vinte seis")]
-        [InlineData("2027/10/24", "dois mil e vinte sete")]
-        [InlineData("2028/10/24", "dois mil e vinte oito")]
-        [InlineData("2029/10/24", "dois mil e vinte nove")]
+        [InlineData("2021/10/24", "dois mil e vinte e um")]
+        [InlineData("2022/10/24", "dois mil e vinte e dois")]
+        [InlineData("2023/10/24", "dois mil e vinte e três")]
+        [InlineData("2024/10/24", "dois mil e vinte e quatro")]
+        [InlineData("2025/10/24", "dois mil e vinte e cinco")]
+        [InlineData("2026/10/24", "dois mil e vinte e seis")]
+        [InlineData("2027/10/24", "dois mil e vinte e sete")]
+        [InlineData("2028/10/24", "dois mil e vinte e oito")]
+        [InlineData("2029/10/24", "dois mil e vinte e nove")]
         [InlineData("2030/10/24", "dois mil e trinta")]
-
 
         public void Validar_ObterAnoPorExtenso(string ano, string resultado)
         {
@@ -157,6 +156,34 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao02
 
             // Assert
             obterAno.Should().Be(resultado);
+        }
+
+        [Theory]
+        [InlineData("1889/01/13", "treze de janeiro de mil oitocentos e oitenta e nove")]
+        [InlineData("0855/02/09", "nove de fevereiro de oitocentos e cinquenta e cinco")]
+        [InlineData("1678/03/31", "trinta e um de março de mil seiscentos e setenta e oito")]
+        [InlineData("2999/04/10", "dez de abril de dois mil novecentos e noventa e nove")]
+        [InlineData("1975/05/11", "onze de maio de mil novecentos e setenta e cinco")]
+        [InlineData("0089/06/01", "um de junho de oitenta e nove")]
+        [InlineData("2015/07/23", "vinte e três de julho de dois mil e quinze")]
+        [InlineData("1678/08/28", "vinte e oito de agosto de mil seiscentos e setenta e oito")]
+        [InlineData("1808/09/16", "dezesseis de setembro de mil oitocentos e oito")]
+        [InlineData("2005/10/24", "vinte e quatro de outubro de dois mil e cinco")]
+        [InlineData("1917/11/14", "quatorze de novembro de mil novecentos e dezessete")]
+        [InlineData("1500/12/06", "seis de dezembro de mil e quinhentos")]
+
+
+        public void Validar_ObterDataCompletaPorExtenso(string data, string resultado)
+        {
+            // Arrange
+            var calendario = new Calendario();
+            calendario.Data = Convert.ToDateTime(data);
+
+            // Act
+            var obterData = calendario.ObterDataCompletaPorExtenso();
+
+            // Assert
+            obterData.Should().Be(resultado);
         }
     }
 }
