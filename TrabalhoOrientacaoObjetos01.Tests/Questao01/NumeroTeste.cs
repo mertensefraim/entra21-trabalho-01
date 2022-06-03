@@ -266,5 +266,29 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
 
         }
 
+        [Theory]
+        [InlineData(999.00, "novecentos e noventa e nove ")]
+        [InlineData(100.00, "cem ")]
+        [InlineData(200.00, "duzentos ")]
+        [InlineData(300.00, "trezentos ")]
+        [InlineData(400.00, "quatrocentos ")]
+        [InlineData(500.00, "quinhentos ")]
+        [InlineData(600.00, "seiscentos ")]
+        [InlineData(700.00, "setecentos ")]
+        [InlineData(800.00, "oitocentos ")]
+        [InlineData(900.00, "novecentos ")]
+        public void Certificando_Retorno_ObterCentenaPorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterCentenaPorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
     }
 }
