@@ -38,7 +38,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
         [InlineData("22:54:52", "Vinte e duas horas")]
         [InlineData("23:44:47", "Vinte e três horas")]
 
-        public void Validar_Todas_As_Horas_Por_Extenso(string hora, string horaExtenso)
+        public void Validar_ObterHoraPorExtenso(string hora, string horaExtenso)
         {
             //Arrange
             var relogio = new Relogio();
@@ -115,7 +115,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
         [InlineData("23:59:11", "cinquenta e nove minutos")]
 
 
-        public void Validar_Todos_Os_Minutos_Por_Extenso(string hora, string minutoExtenso)
+        public void Validar_ObterMinutoPorExtenso(string hora, string minutoExtenso)
         {
             //Arrange
             var relogio = new Relogio();
@@ -191,7 +191,7 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
         [InlineData("11:44:58", "cinquenta e oito segundos")]
         [InlineData("23:05:59", "cinquenta e nove segundos")]
 
-        public void Validar_Todos_Os_Segundos_Por_Extenso(string hora, string segundoExtenso)
+        public void Validar_ObterSegundoPorExtenso(string hora, string segundoExtenso)
         {
             //Arrange
             var relogio = new Relogio();
@@ -204,7 +204,31 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao03
             segundoPorExtenso.Should().Be(segundoExtenso);
         }
 
+        [Theory]
 
+        [InlineData("01:15:23", "Uma hora, quinze minutos e vinte e três segundos")]
+        [InlineData("02:23:15", "Duas horas, vinte e três minutos e quinze segundos")]
+        [InlineData("03:25:40", "Três horas, vinte e cinco minutos e quarenta segundos")]
+        [InlineData("07:30:39", "Sete horas, trinta minutos e trinta e nove segundos")]
+        [InlineData("10:15:32", "Dez horas, quinze minutos e trinta e dois segundos")]
+        [InlineData("11:04:01", "Onze horas, quatro minutos e um segundo")]
+        [InlineData("15:33:49", "Quinze horas, trinta e três minutos e quarenta e nove segundos")]
+        [InlineData("19:50:55", "Dezenove horas, cinquenta minutos e cinquenta e cinco segundos")]
+        [InlineData("21:01:04", "Vinte e uma horas, um minuto e quatro segundos")]
+        [InlineData("23:44:58", "Vinte e três horas, quarenta e quatro minutos e cinquenta e oito segundos")]
+
+        public void Validar_ObterHoraCompletaPorExtenso(string hora, string horaCompletaExtenso)
+        {
+            //Arrange
+            var relogio = new Relogio();
+            relogio.Hora = Convert.ToDateTime(hora);
+
+            //Act
+            var horaCompletaPorExtenso = relogio.ObterHoraCompletaPorExtenso();
+
+            //Assert
+            horaCompletaPorExtenso.Should().Be(horaCompletaExtenso);
+        }
 
     }
 }
