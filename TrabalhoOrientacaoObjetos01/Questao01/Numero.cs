@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabalhoOrientacaoObjetos01.Questao01
 {
+    //Leonardo Pokrewecky Salvador
     public class Numero
     {
         //Propriedades
