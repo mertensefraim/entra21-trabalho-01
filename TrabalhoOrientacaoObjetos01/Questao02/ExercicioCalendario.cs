@@ -26,7 +26,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
                 catch (Exception ex)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("A data digita não está em um formato permitido, tento novamente");
+                    Console.WriteLine("A data digita não está em um formato permitido, tente novamente");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
@@ -78,7 +78,7 @@ namespace TrabalhoOrientacaoObjetos01.Questao02
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine("A data digita não está em um formato permitido, tento novamente:");
-                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.White;
                                 }
                             }
 
