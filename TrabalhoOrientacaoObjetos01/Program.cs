@@ -6,8 +6,7 @@ var escolhaUsuario = 0;
 
 while (escolhaUsuario != 99)
 {
-    Console.Clear();
-    Console.Write(@"------Questões----------
+    Console.Write(@"----------Questões----------
 01 - Questão 01
 02 - Questão 02
 03 - Questão 03
