@@ -127,5 +127,168 @@ namespace TrabalhoOrientacaoObjetos01.Tests.Questao01
             numeroPorExtenso.Should().Be(valorPorExtenso);
 
         }
+
+        [Theory]
+        [InlineData(0.00, "zero")]
+        [InlineData(1.00, "um ")]
+        [InlineData(2.00, "dois ")]
+        [InlineData(3.00, "três ")]
+        [InlineData(4.00, "quatro ")]
+        [InlineData(5.00, "cinco ")]
+        [InlineData(6.00, "seis ")]
+        [InlineData(7.00, "sete ")]
+        [InlineData(8.00, "oito ")]
+        [InlineData(9.00, "nove ")]
+        [InlineData(10.00, "dez ")]
+        [InlineData(11.00, "onze ")]
+        [InlineData(12.00, "doze ")]
+        [InlineData(13.00, "treze ")]
+        [InlineData(14.00, "catorze ")]
+        [InlineData(15.00, "quinze ")]
+        [InlineData(16.00, "dezesseis ")]
+        [InlineData(17.00, "dezessete ")]
+        [InlineData(18.00, "dezoito ")]
+        [InlineData(19.00, "dezenove ")]
+        [InlineData(20.00, "vinte ")]
+        [InlineData(21.00, "vinte e um ")]
+        [InlineData(22.00, "vinte e dois ")]
+        [InlineData(23.00, "vinte e três ")]
+        [InlineData(24.00, "vinte e quatro ")]
+        [InlineData(25.00, "vinte e cinco ")]
+        [InlineData(26.00, "vinte e seis ")]
+        [InlineData(27.00, "vinte e sete ")]
+        [InlineData(28.00, "vinte e oito ")]
+        [InlineData(29.00, "vinte e nove ")]
+        [InlineData(30.00, "trinta ")]
+        [InlineData(31.00, "trinta e um ")]
+        [InlineData(32.00, "trinta e dois ")]
+        [InlineData(33.00, "trinta e três ")]
+        [InlineData(34.00, "trinta e quatro ")]
+        [InlineData(35.00, "trinta e cinco ")]
+        [InlineData(36.00, "trinta e seis ")]
+        [InlineData(37.00, "trinta e sete ")]
+        [InlineData(38.00, "trinta e oito ")]
+        [InlineData(39.00, "trinta e nove ")]
+        [InlineData(40.00, "quarenta ")]
+        [InlineData(41.00, "quarenta e um ")]
+        [InlineData(42.00, "quarenta e dois ")]
+        [InlineData(43.00, "quarenta e três ")]
+        [InlineData(44.00, "quarenta e quatro ")]
+        [InlineData(45.00, "quarenta e cinco ")]
+        [InlineData(46.00, "quarenta e seis ")]
+        [InlineData(47.00, "quarenta e sete ")]
+        [InlineData(48.00, "quarenta e oito ")]
+        [InlineData(49.00, "quarenta e nove ")]
+        [InlineData(50.00, "cinquenta ")]
+        [InlineData(51.00, "cinquenta e um ")]
+        [InlineData(52.00, "cinquenta e dois ")]
+        [InlineData(53.00, "cinquenta e três ")]
+        [InlineData(54.00, "cinquenta e quatro ")]
+        [InlineData(55.00, "cinquenta e cinco ")]
+        [InlineData(56.00, "cinquenta e seis ")]
+        [InlineData(57.00, "cinquenta e sete ")]
+        [InlineData(58.00, "cinquenta e oito ")]
+        [InlineData(59.00, "cinquenta e nove ")]
+        [InlineData(60.00, "sessenta ")]
+        [InlineData(61.00, "sessenta e um ")]
+        [InlineData(62.00, "sessenta e dois ")]
+        [InlineData(63.00, "sessenta e três ")]
+        [InlineData(64.00, "sessenta e quatro ")]
+        [InlineData(65.00, "sessenta e cinco ")]
+        [InlineData(66.00, "sessenta e seis ")]
+        [InlineData(67.00, "sessenta e sete ")]
+        [InlineData(68.00, "sessenta e oito ")]
+        [InlineData(69.00, "sessenta e nove ")]
+        [InlineData(70.00, "setenta ")]
+        [InlineData(71.00, "setenta e um ")]
+        [InlineData(72.00, "setenta e dois ")]
+        [InlineData(73.00, "setenta e três ")]
+        [InlineData(74.00, "setenta e quatro ")]
+        [InlineData(75.00, "setenta e cinco ")]
+        [InlineData(76.00, "setenta e seis ")]
+        [InlineData(77.00, "setenta e sete ")]
+        [InlineData(78.00, "setenta e oito ")]
+        [InlineData(79.00, "setenta e nove ")]
+        [InlineData(80.00, "oitenta ")]
+        [InlineData(81.00, "oitenta e um ")]
+        [InlineData(82.00, "oitenta e dois ")]
+        [InlineData(83.00, "oitenta e três ")]
+        [InlineData(84.00, "oitenta e quatro ")]
+        [InlineData(85.00, "oitenta e cinco ")]
+        [InlineData(86.00, "oitenta e seis ")]
+        [InlineData(87.00, "oitenta e sete ")]
+        [InlineData(88.00, "oitenta e oito ")]
+        [InlineData(89.00, "oitenta e nove ")]
+        [InlineData(90.00, "noventa ")]
+        [InlineData(91.00, "noventa e um ")]
+        [InlineData(92.00, "noventa e dois ")]
+        [InlineData(93.00, "noventa e três ")]
+        [InlineData(94.00, "noventa e quatro ")]
+        [InlineData(95.00, "noventa e cinco ")]
+        [InlineData(96.00, "noventa e seis ")]
+        [InlineData(97.00, "noventa e sete ")]
+        [InlineData(98.00, "noventa e oito ")]
+        [InlineData(99.00, "noventa e nove ")]
+        public void Certificando_Retorno_ObterDezenaPorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterDezenaPorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
+        [Theory]
+        [InlineData(0.00, "zero")]
+        [InlineData(1.00, "um ")]
+        [InlineData(2.00, "dois ")]
+        [InlineData(3.00, "três ")]
+        [InlineData(4.00, "quatro ")]
+        [InlineData(5.00, "cinco ")]
+        [InlineData(6.00, "seis ")]
+        [InlineData(7.00, "sete ")]
+        [InlineData(8.00, "oito ")]
+        [InlineData(9.00, "nove ")]
+        public void Certificando_Retorno_ObterUnidadePorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterUnidadePorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
+        [Theory]
+        [InlineData(999.00, "novecentos e noventa e nove ")]
+        [InlineData(100.00, "cem ")]
+        [InlineData(200.00, "duzentos ")]
+        [InlineData(300.00, "trezentos ")]
+        [InlineData(400.00, "quatrocentos ")]
+        [InlineData(500.00, "quinhentos ")]
+        [InlineData(600.00, "seiscentos ")]
+        [InlineData(700.00, "setecentos ")]
+        [InlineData(800.00, "oitocentos ")]
+        [InlineData(900.00, "novecentos ")]
+        public void Certificando_Retorno_ObterCentenaPorExtenso(double valor, string valorPorExtenso)
+        {           // Arran
+            var numero = new Numero();
+            numero.ValorAuxiliar = valor;
+            numero.Valor = valor;
+            // Act
+            var numeroPorExtenso = numero.ObterCentenaPorExtenso();
+
+            // Assert
+            numeroPorExtenso.Should().Be(valorPorExtenso);
+
+        }
+
     }
 }
