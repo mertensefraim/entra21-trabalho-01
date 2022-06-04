@@ -19,7 +19,10 @@
                 }
                 catch (Exception ex)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Informe uma hora válida");
+                    Console.ForegroundColor = ConsoleColor.White;
+
                     opcaoValida = false;
                 }
             }
